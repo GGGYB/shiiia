@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.8.5 on win32)" generated="20210129 17:42:23.291" rpa="false">
+<suite id="s1" name="Tc" source="D:\learn\0129\tc">
+<kw name="Open My Browser" library="pylibs.MyDriver" type="setup">
+<status status="PASS" starttime="20210129 17:42:23.460" endtime="20210129 17:42:33.328"></status>
+</kw>
+<suite id="s1-s1" name="homePage" source="D:\learn\0129\tc\homePage.robot">
+<test id="s1-s1-t1" name="百度一下">
+<kw name="Get Navigate" library="pylibs.HomePage">
+<assign>
+<var>${getText}</var>
+</assign>
+<msg timestamp="20210129 17:42:33.438" level="INFO">['首页', '需求大厅', '入驻企业', '产品与案例', '支持与服务', '登录']</msg>
+<msg timestamp="20210129 17:42:33.438" level="INFO">${getText} = ['首页', '需求大厅', '入驻企业', '产品与案例', '支持与服务', '登录']</msg>
+<status status="PASS" starttime="20210129 17:42:33.339" endtime="20210129 17:42:33.438"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<arguments>
+<arg>首页</arg>
+<arg>需求大厅</arg>
+<arg>入驻企业</arg>
+<arg>产品与案例</arg>
+<arg>支持与服务</arg>
+<arg>登录</arg>
+</arguments>
+<assign>
+<var>${inData}</var>
+</assign>
+<msg timestamp="20210129 17:42:33.438" level="INFO">${inData} = ['首页', '需求大厅', '入驻企业', '产品与案例', '支持与服务', '登录']</msg>
+<status status="PASS" starttime="20210129 17:42:33.438" endtime="20210129 17:42:33.438"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$getText==$inData</arg>
+</arguments>
+<status status="PASS" starttime="20210129 17:42:33.438" endtime="20210129 17:42:33.442"></status>
+</kw>
+<status status="PASS" starttime="20210129 17:42:33.338" endtime="20210129 17:42:33.442" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210129 17:42:33.328" endtime="20210129 17:42:33.444"></status>
+</suite>
+<suite id="s1-s2" name="requirementHost" source="D:\learn\0129\tc\requirementHost.robot">
+<kw name="To Requirement Page" library="pylibs.RequirementHost" type="setup">
+<status status="PASS" starttime="20210129 17:42:33.454" endtime="20210129 17:42:34.394"></status>
+</kw>
+<test id="s1-s2-t1" name="需求类型">
+<kw name="Get Requirement Type" library="pylibs.RequirementHost">
+<assign>
+<var>${rqmType}</var>
+</assign>
+<msg timestamp="20210129 17:42:34.448" level="INFO">['最新需求', '热门需求']</msg>
+<msg timestamp="20210129 17:42:34.448" level="INFO">${rqmType} = ['最新需求', '热门需求']</msg>
+<status status="PASS" starttime="20210129 17:42:34.395" endtime="20210129 17:42:34.448"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<arguments>
+<arg>最新需求</arg>
+<arg>热门需求</arg>
+</arguments>
+<assign>
+<var>${inData}</var>
+</assign>
+<msg timestamp="20210129 17:42:34.449" level="INFO">${inData} = ['最新需求', '热门需求']</msg>
+<status status="PASS" starttime="20210129 17:42:34.449" endtime="20210129 17:42:34.449"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$rqmType==$inData</arg>
+</arguments>
+<status status="PASS" starttime="20210129 17:42:34.449" endtime="20210129 17:42:34.449"></status>
+</kw>
+<status status="PASS" starttime="20210129 17:42:34.394" endtime="20210129 17:42:34.450" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210129 17:42:33.445" endtime="20210129 17:42:34.451"></status>
+</suite>
+<status status="PASS" starttime="20210129 17:42:23.294" endtime="20210129 17:42:34.453"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0">Critical Tests</stat>
+<stat pass="2" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" id="s1" name="Tc">Tc</stat>
+<stat pass="1" fail="0" id="s1-s1" name="homePage">Tc.homePage</stat>
+<stat pass="1" fail="0" id="s1-s2" name="requirementHost">Tc.requirementHost</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
